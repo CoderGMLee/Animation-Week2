@@ -12,7 +12,6 @@ import UIKit
 class CustomCell: UITableViewCell {
 
     var backView : UIView?
-    var backImageView : UIImageView?
     let lastCellHei : CGFloat = 200;
     let selfHei :CGFloat = 75
     override func awakeFromNib() {
@@ -34,6 +33,7 @@ class CustomCell: UITableViewCell {
         let currentLocation : CGFloat = tableView.contentOffset.y + lastCellHei;
         let screenWid = UIScreen.mainScreen().bounds.width;
 
+        //核心代码
         if tableView.contentOffset.y + lastCellHei - selfHei > self.frame.origin.y{
             self.backView?.frame = CGRectMake(0, -(lastCellHei - selfHei), screenWid, lastCellHei);
             print("1",self.backView?.frame);
